@@ -1,0 +1,67 @@
+// vim:set ft=json:
+{
+  "position": "top",
+  "height": 40,
+  "width": 1890,
+
+  "modules-left": [
+    "wlr/workspaces",
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "tray",
+    "battery"
+  ],
+
+  // Modules configuration
+  "wlr/workspaces": {
+    "all-outputs": true,
+    "enable-bar-scroll": true,
+    "format": "{icon}",
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    },
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "default": "",
+      "urgent": "",
+      "focused": ""
+    }
+  },
+
+  "clock": {
+    "format": "<span foreground='#DDB6F2'> </span><span> {:%I:%M %p}</span>",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "<span foreground='#96CDFB'> </span><span> {:%I:%M %p  %a %d}</span>"
+  },
+
+  "tray": {
+    "icon-size": 24,
+    "reverse-direction": true
+  },
+
+  "battery": {
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+}

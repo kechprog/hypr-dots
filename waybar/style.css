@@ -1,0 +1,98 @@
+@define-color Rosewater #f4dbd6;
+@define-color Flamingo 	#f0c6c6;
+@define-color Pink 	    #f5bde6;
+@define-color Mauve 	  #c6a0f6;
+@define-color Red 	    #ed8796;
+@define-color Maroon 	  #ee99a0;
+@define-color Peach 	  #f5a97f;
+@define-color Yellow 	  #eed49f;
+@define-color Green 	  #a6da95;
+@define-color Teal 	    #8bd5ca;
+@define-color Sky 	    #91d7e3;
+@define-color Sapphire 	#7dc4e4;
+@define-color Blue 	    #8aadf4;
+@define-color Lavender 	#b7bdf8;
+@define-color Text 	    #cad3f5;
+@define-color Subtext1 	#b8c0e0;
+@define-color Subtext0 	#a5adcb;
+@define-color Overlay2 	#939ab7;
+@define-color Overlay1 	#8087a2;
+@define-color Overlay0 	#6e738d;
+@define-color Surface2 	#5b6078;
+@define-color Surface1 	#494d64;
+@define-color Surface0 	#363a4f;
+@define-color Base 	    #24273a;
+@define-color Mantle 	  #1e2030;
+@define-color Crust 	  #181926;
+
+
+
+* {
+  min-height:     0;
+  margin:         0;
+  padding:        0;
+  border-radius:  0;
+  font-family:    "Iosevka Aile", "JetBrainsMono Nerd Font";
+  font-size:      12pt;
+  /* padding-bottom: 1px;
+  padding-top:    1px; */
+}
+
+window#waybar {
+  background-color: @Base;
+  color:            @Text;
+  border:           solid 2px @Yellow;
+  border-radius:    10px;
+}
+
+/* LEFT */
+#workspaces {
+  background: transparent;
+  margin-left: 5px;
+  border-radius: 7px;
+}
+
+#workspaces button {
+  background-color: @Text;
+  border:           1px solid @Text;
+  border-radius:    7px;
+  color:            @Crust;
+  margin:           8px 6px;
+  padding:          5px 7px;
+}
+
+#workspaces button.current_output {
+  background-color: @Lavender;
+  border-color: @Lavender;
+  color: @Crust;
+}
+
+#workspaces button.focused {
+  background-color: @Lavender;
+  border-color: @Lavender;
+  color: @Crust;
+}
+
+#workspaces button.urgent {
+  background-color: @Lavender;
+  border-color: @Lavender;
+  color: @Crust;
+}
+
+#workspaces button:hover {
+  background-color: @Lavender;
+  border-color: @Lavender;
+  color: @Crust;
+}
+
+/* RIGHT  */
+
+#battery {
+  background-color: @Teal;
+  color: @Crust;
+  border-radius: 7px;
+  border: 1px solid @Teal;
+  margin: 8px 6px;
+  margin-right: 10px;
+  padding: 6px;
+}
