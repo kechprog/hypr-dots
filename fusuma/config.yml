@@ -1,0 +1,11 @@
+swipe:
+  3:
+    right:
+      command: "/home/ed/.config/fusuma/mv_workspace.py left"
+    left:
+      command: "/home/ed/.config/fusuma/mv_workspace.py right" 
+  4:
+    right:
+      command: "/home/ed/.config/fusuma/mv_workspace.py left" 
+    left:
+      command: "/home/ed/.config/fusuma/mv_workspace.py right" 
