@@ -1,7 +1,7 @@
 ---@diagnostic disable: undefined-global
 local awful = require("awful")
 
-M = {}
+local M = {}
 
 function M.focus_to(direction)
   return function()

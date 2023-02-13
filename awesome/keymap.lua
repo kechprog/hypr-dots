@@ -6,6 +6,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 local switcher      = require("switcher_init")
 local func_keys     = require("func_keys")
 local helpers       = require("helpers")
+local popups = require 'popups'
 
 local TERMINAL = "kitty"
 local MODKEY   = "Mod1"
@@ -47,19 +48,19 @@ local GLOBALKEYS = gears.table.join(
   ---------------------------------------------------------
   -------------         FUNCTION KEYS         -------------
   ---------------------------------------------------------
-  awful.key({}, "XF86AudioRaiseVolume", func_keys.vol_up,
+  awful.key({}, "XF86AudioRaiseVolume", popups.volume.vol_up,
     { description = "focus right", group = "awesome" }),
 
-  awful.key({}, "XF86AudioLowerVolume", func_keys.vol_down,
+  awful.key({}, "XF86AudioLowerVolume", popups.volume.vol_down,
     { description = "focus right", group = "awesome" }),
 
   awful.key({}, "XF86AudioMute", func_keys.vol_toggle_mute,
     { description = "focus right", group = "awesome" }),
 
-  awful.key({}, "XF86MonBrightnessUp", func_keys.brightness_up,
+  awful.key({}, "XF86MonBrightnessUp", popups.brightness.brightness_up,
     { description = "focus right", group = "awesome" }),
 
-  awful.key({}, "XF86MonBrightnessDown", func_keys.brightness_down,
+  awful.key({}, "XF86MonBrightnessDown", popups.brightness.brightness_down,
     { description = "focus right", group = "awesome" }),
 
   awful.key({}, "XF86TouchpadToggle", func_keys.toggle_touchpad,
@@ -71,7 +72,6 @@ local GLOBALKEYS = gears.table.join(
   ------------------------------------------------------------------------
   --                                APPS                                --
   ------------------------------------------------------------------------
-
   awful.key({ MODKEY, }, "Return", function() awful.spawn(TERMINAL) end,
     { description = "open a terminal", group = "launcher" }),
 

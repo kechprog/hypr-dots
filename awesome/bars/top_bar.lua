@@ -73,28 +73,18 @@ awful.screen.connect_for_each_screen(function(s)
 
 
   -- battery widget
-  -- local battery_widget = require("widgets.battery-widget")
-  -- local BAT0 = battery_widget {
-  --   ac = "AC",
-  --   adapter = "BATT",
-
-  --   ac_prefix = "",
-  --   battery_prefix = "",
-  --   percent_colors = {
-  --     { 15, "#ed8796"},
-  --     { 40, "#eed49f"},
-  --     { 999,"#a6da95"},
-  --   },
-  --   listen = true,
-  --   timeout = 10,
-  --   widget_text = "${AC_BAT}${color_on}${percent}%${color_off}",
-  --   widget_font = "Deja Vu Sans Mono 8",
-  --   tooltip_text = "Battery ${state}${time_est}\nCapacity: ${capacity_percent}%",
-  --   alert_threshold = 5,
-  --   alert_timeout = 0,
-  --   alert_title = "Low battery !",
-  --   alert_text = "${AC_BAT}${time_est}"
-  -- }
+  local bat = require "widgets.awesome-wm-widgets.batteryarc-widget.batteryarc" {
+    font = 'Caskaydia Cove Nerd Font',
+    arc_thickness = 2,
+    show_current_level = false,
+    size = 20,
+    timeout = 60,
+    main_color = '#a6da95',
+    medium_level_color = '#eed49f',
+    low_level_color = '#ed8796',
+    charging_color = '##91d7e3',
+  }
+  
 
 
 
@@ -106,26 +96,6 @@ awful.screen.connect_for_each_screen(function(s)
     awful.button({}, 4, function() awful.layout.inc(1) end),
     awful.button({}, 5, function() awful.layout.inc(-1) end)
   ))
-
-  -- pg
-  s.brightness_progressbar = wibox.widget {
-    value         = func_keys.get_current_brightness(),
-    max_value     = 100,
-    border_width  = 2,
-    border_color  = beautiful.border_color,
-    color         = gears.color("#ffffff"),
-    shape         = gears.shape.rounded_bar,
-    bar_shape     = gears.shape.rounded_bar,
-    clip          = false,
-    forced_height = 30,
-    forced_width  = 100,
-    paddings      = 5,
-    margins       = {
-      top    = 12,
-      bottom = 12,
-    },
-    widget        = wibox.widget.progressbar,
-  }
 
   -- Create an actual bar
   s.mywibox = awful.wibar({ position = "top", screen = s }):setup {
@@ -150,10 +120,8 @@ awful.screen.connect_for_each_screen(function(s)
       layout = wibox.layout.fixed.horizontal,
 
       wibox.widget.systray(), -- god knows what is it.
-      s.brightness_progressbar,
-      -- BAT0,
+      bat,
       s.mylayoutbox,
-      -- control_mission,
     },
   }
 end)
