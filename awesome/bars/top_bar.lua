@@ -108,7 +108,7 @@ awful.screen.connect_for_each_screen(function(s)
       s.mytaglist,
     },
 
-    { -- Middle widget, textclock aligned to the center
+    { -- Middle widget,
       layout = wibox.layout.align.horizontal,
       expand = "none",
       nil,
